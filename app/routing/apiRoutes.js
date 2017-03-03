@@ -2,17 +2,15 @@ var path = require("path");
 
 module.exports = function(app) {
 
-app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "../public/home.html"));
-    // res.send("Welcome to our restaurant!");
-});
+app.post("/api/new", function(req, res) {
+  var newreservation = req.body;
+  newreservation.routeName = newreservation.name.replace(/\s+/g, "").toLowerCase();
 
-app.get("/tables", function(req, res) {
-  res.sendFile(path.join(__dirname, "../public/tables.html"));
-});
+  console.log(newreservation);
 
-app.get("/reserve", function(req, res) {
-  res.sendFile(path.join(__dirname, "../public/reserve.html"));
+  tableArray.push(newreservation);
+
+  res.json(newreservation);
 });
 
 }

@@ -14,12 +14,12 @@ var tableArray = [{
   name: "Jack Johnson",
   phone: "555-867-5309",
   email: test1@test.com,
-  uniqueID: JackJ
+  uniqueID: jackJ
 }, {
   name: "Jimmy Jameson",
   phone: "555-867-5309",
   email: test2@test.com,
-  uniqueID: JimmyJ
+  uniqueID: jimmyJ
 }];
 
 // Note how we export the array. This makes it accessible to other files using require.
