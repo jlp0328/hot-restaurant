@@ -69,7 +69,7 @@
       console.log(tableArray);
 
       // Question: What does this code do??
-      $.post("/reservations", newReservation)
+      $.post("/tables", newReservation)
       .done(function(data) {
         console.log(data);
         alert("Adding Reservation...");
