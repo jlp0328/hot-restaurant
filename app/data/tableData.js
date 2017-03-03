@@ -5,10 +5,22 @@
 // But you could have it be an empty array as well.
 // ===============================================================================
 
-var tableArray = [
-	// objects representing customers with reservations go here
-	// you may want to start with some hard-coded for testing
-];
+var tableArray = [{
+  name: "Mike Michaelson",
+  phone: "555-867-5309",
+  email: test@test.com,
+  uniqueID: mikeyM
+}, {
+  name: "Jack Johnson",
+  phone: "555-867-5309",
+  email: test1@test.com,
+  uniqueID: JackJ
+}, {
+  name: "Jimmy Jameson",
+  phone: "555-867-5309",
+  email: test2@test.com,
+  uniqueID: JimmyJ
+}];
 
 // Note how we export the array. This makes it accessible to other files using require.
 module.exports = tableArray;
