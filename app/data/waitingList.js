@@ -6,8 +6,20 @@
 // ===============================================================================
 
 var waitingArray = [
-	// objects representing customers on the waiting list go here
-	// you may want to start with some hard-coded for testing
+  name: "Mike Michaelson",
+  phone: "555-867-5309",
+  email: test@test.com,
+  uniqueID: mikeyM
+}, {
+  name: "Jack Johnson",
+  phone: "555-867-5309",
+  email: test1@test.com,
+  uniqueID: JackJ
+}, {
+  name: "Jimmy Jameson",
+  phone: "555-867-5309",
+  email: test2@test.com,
+  uniqueID: JimmyJ
 ];
 
 
