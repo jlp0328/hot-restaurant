@@ -24,33 +24,55 @@
 </div>
 
 <div class="container">
-<div class="panel panel-default">
-<div class="panel-heading"> Table Reservation </div>
-<div class="panel-body">
+	<div class="panel panel-default">
+		<div class="panel-heading"> 
+			<h4> Table Reservation </h4> 
+		</div>
+			<div class="panel-body">
 
-<form>
-  <div class="form-group">
-    <label for="nameInput">Name</label>
-    <input type="text" class="form-control" id="nameInput" placeholder="Name">
-  </div>
-  <div class="form-group">
-    <label for="phoneInput">Phone</label>
-    <input type="text" class="form-control" id="phoneInput" placeholder="Phone Number">
-  </div>
-  <div class="form-group">
-    <label for="emailInput">Email</label>
-    <input type="text" class="form-control" id="emailInput">
-  </div>
-  <div class="form-group">
-    <label for="uniqueInput">Unique ID</label>
-    <input type="text" class="form-control" id="uniqueInput">
-  </div>
-  
-  <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-</form>
+			<form method="POST" role="form">
+			  <div class="form-group">
+			    <label for="nameInput">Name</label>
+			    <input type="text" class="form-control" id="nameInput" placeholder="Name">
+			  </div>
+			  <div class="form-group">
+			    <label for="phoneInput">Phone</label>
+			    <input type="text" class="form-control" id="phoneInput" placeholder="Phone Number">
+			  </div>
+			  <div class="form-group">
+			    <label for="emailInput">Email</label>
+			    <input type="text" class="form-control" id="emailInput">
+			  </div>
+			  <div class="form-group">
+			    <label for="uniqueInput">Unique ID</label>
+			    <input type="text" class="form-control" id="uniqueInput">
+			  </div>
+			  
+			  <button type="submit" class="btn btn-primary btn-lg" id="add-btn">Submit</button>
+			</form>
+		</div>
+	</div>
 </div>
-</div>
-</div>
+
+<script type="text/javascript">
+    
+    $("#add-btn").on("click", function(event) {
+      event.preventDefault();
+      var newReservation = {
+        name: $("#nameInput").val().trim(),
+        phone: $("#phoneInput").val().trim(),
+        email: $("#emailInput").val().trim(),
+        unique: $("#uniqueInput").val().trim()
+      };
+
+      // Question: What does this code do??
+      $.post("/api/new", newReservation)
+      .done(function(data) {
+        console.log(data);
+        alert("Adding Reservation...");
+      });
+    });
+  </script>
 
 </body>
 </html>
