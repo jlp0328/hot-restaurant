@@ -15,9 +15,9 @@
     <p class="lead">Current Reservations and Waiting List</p>
     <hr class="my-2">
     <p class="lead">
-      <a class="btn btn-primary btn-lg" href="tables.html" role="button"><span class ="glyphicon glyphicon-credit-card"></span> View Tables</a>
+      <a class="btn btn-primary btn-lg" href="/tables" role="button"><span class ="glyphicon glyphicon-credit-card"></span> View Tables</a>
 
-      <a class="btn btn-primary btn-lg" href="home.html" role="button"><span class ="glyphicon glyphicon-home"></span></a>
+      <a class="btn btn-primary btn-lg" href="/" role="button"><span class ="glyphicon glyphicon-home"></span></a>
 
     </p>
   </div>
@@ -25,8 +25,8 @@
 
 <div class="container">
 	<div class="panel panel-default">
-		<div class="panel-heading"> 
-			<h4> Table Reservation </h4> 
+		<div class="panel-heading">
+			<h4> Table Reservation </h4>
 		</div>
 			<div class="panel-body">
 
@@ -47,7 +47,7 @@
 			    <label for="uniqueInput">Unique ID</label>
 			    <input type="text" class="form-control" id="uniqueInput">
 			  </div>
-			  
+
 			  <button type="submit" class="btn btn-primary btn-lg" id="add-btn">Submit</button>
 			</form>
 		</div>
@@ -55,7 +55,7 @@
 </div>
 
 <script type="text/javascript">
-    
+
     $("#add-btn").on("click", function(event) {
       event.preventDefault();
       var newReservation = {
@@ -65,8 +65,11 @@
         unique: $("#uniqueInput").val().trim()
       };
 
+      tableArray.push(newReservation);
+      console.log(tableArray);
+
       // Question: What does this code do??
-      $.post("/api/new", newReservation)
+      $.post("/tables", newReservation)
       .done(function(data) {
         console.log(data);
         alert("Adding Reservation...");
